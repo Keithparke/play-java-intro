@@ -1,0 +1,29 @@
+@(employees: List[Employees])
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" type ="text/css" href="@routes.Assets.at("stylesheets/main.css")"/>
+</head>
+<body>
+<h1>List of Employees</h1>
+<table>
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee First Name</th>
+        <th>Employee Last Name</th>
+        <th>Photo</th>
+    </tr>
+    @for(employee <- employees) {
+    <tr>
+        <td>@employee.employeeId</td>
+        <td>@employee.firstName</td>
+        <td>@employee.lastName</td>
+        <td><img src=@{routes.EmployeesController.getPicture(employee.employeeId)}></td>
+    </tr>
+    }
+</table>
+
+</body>
+</html>
