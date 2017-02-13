@@ -7,12 +7,14 @@
 <h1>List of Categories</h1>
 <table>
     <tr>
+        <th>editCategory</th>
         <th>Category Id</th>
         <th>Category Name</th>
         <th>Description</th>
     </tr>
     @for(category <- categories) {
     <tr>
+        <td><a href="@routes.CategoriesController.editCategory(category.categoryId)">Edit</a></td>
         <td>@category.categoryId</td>
         <td>@category.categoryName</td>
         <td>@category.description</td>

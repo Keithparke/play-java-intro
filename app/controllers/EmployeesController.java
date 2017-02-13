@@ -63,8 +63,8 @@ public class EmployeesController extends Controller
 
         //copy the form values out into local variables
         Long employeeId = new Long(postedForm.get("employeeId"));
-        String employeeFirstName = postedForm.get("employeeFirstName");
-        String employeeLastName = postedForm.get("employeeLastName");
+        String employeeFirstName = postedForm.get("firstName");
+        String employeeLastName = postedForm.get("lastName");
 
         //get the model of the category we want to update
         Employees employee = (Employees) jpaApi.em()
